@@ -908,6 +908,9 @@ You're the only one I've ever known.</p>
     </audio>
 
     <script>
+         let flippedCards = [];
+        let matchedPairs = 0;
+        let canFlip = true;
         // ============================================
         // LOVE QUOTES DATABASE
         // ============================================
@@ -1098,8 +1101,8 @@ You're the only one I've ever known.</p>
         
         // YOUR SONG URL HERE - Replace with actual URL from Dropbox, Google Drive, etc.
         const songURL = ""; // Add your song URL here
-        const songTitle = "";
-        const songArtist = "";
+        const songTitle = "Maruthu";
+        const songArtist = "Maruthu";
         
         const audioPlayer = document.getElementById('audioPlayer');
         const playPauseBtn = document.getElementById('playPauseBtn');
@@ -1183,16 +1186,16 @@ You're the only one I've ever known.</p>
         // ============================================
         // MEMORY CARD GAME
         // ============================================
-        let flippedCards = [];
-        let matchedPairs = 0;
-        let canFlip = true;
+       
 
         function flipCard(card) {
-            if (!canFlip || card.classList.contains('flipped') || card.classList.contains('matched')) {
+        console.log(card)
+        console.log(canFlip)
+            if (!canFlip || card?.classList?.contains('flipped') || card?.classList?.contains('matched')) {
                 return;
             }
 
-            card.classList.add('flipped');
+            card.classList?.add('flipped');
             flippedCards.push(card);
 
             if (flippedCards.length === 2) {
