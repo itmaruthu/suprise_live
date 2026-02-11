@@ -479,30 +479,6 @@
     <div class="hearts" id="hearts"></div>
 
     <div class="container">
-<!-- Countdown Timer -->
-        <div id="countdown-section" class="countdown-section">
-            <h2>Something Special Awaits You Priyanka Maruthu... ❤️</h2>
-            <div class="countdown-timer">
-                <div class="time-box">
-                    <span id="days" class="time-number">00</span>
-                    <span class="time-label">Days</span>
-                </div>
-                <div class="time-box">
-                    <span id="hours" class="time-number">00</span>
-                    <span class="time-label">Hours</span>
-                </div>
-                <div class="time-box">
-                    <span id="minutes" class="time-number">00</span>
-                    <span class="time-label">Minutes</span>
-                </div>
-                <div class="time-box">
-                    <span id="seconds" class="time-number">00</span>
-                    <span class="time-label">Seconds</span>
-                </div>
-            </div>
-            <p class="countdown-message">Until your special surprise is revealed...Have some fun</p>
-        </div>
-
         <!-- Love Quote Section (Always Visible) -->
         <section class="love-quote-section">
             <div class="quote-text" id="quoteText">"Loading..."</div>
@@ -640,7 +616,29 @@
             </div>
         </section>
 
-        
+        <!-- Countdown Timer -->
+        <div id="countdown-section" class="countdown-section">
+            <h2>Something Special Awaits You... ❤️</h2>
+            <div class="countdown-timer">
+                <div class="time-box">
+                    <span id="days" class="time-number">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours" class="time-number">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes" class="time-number">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds" class="time-number">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+            <p class="countdown-message">Until your special surprise is revealed...</p>
+        </div>
 
         <!-- ALL CONTENT BELOW IS HIDDEN UNTIL COUNTDOWN ENDS -->
         <div id="mainContent" class="hidden-content">
@@ -763,7 +761,7 @@ You're the only one I've ever known.</p>
                 <div style="position: relative; max-width: 800px; margin: 0 auto;">
                     <!-- Slideshow Images -->
                     <div id="slideshow-container" style="position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
-                         <!-- Slide 1 -->
+                          <!-- Slide 1 -->
                         <div class="slide active" style="display: block; cursor: pointer;" onclick="openLightbox(0)">
                             <img src="images/poems/1.jpg" alt="Thought 1" style="width: 100%; height: 500px; object-fit: cover; display: block;">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; padding: 30px 20px 20px; text-align: center;">
@@ -878,7 +876,7 @@ You're the only one I've ever known.</p>
     </div>
 
     <!-- Music Player -->
-    <!-- <div class="music-player" id="musicPlayer">
+    <div class="music-player" id="musicPlayer">
         <span class="player-icon">🎵</span>
         <div class="player-info">
             <div class="song-title" id="songTitle">Our Song</div>
@@ -891,7 +889,7 @@ You're the only one I've ever known.</p>
             <span class="volume-icon" id="volumeIcon">🔊</span>
             <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
         </div>
-    </div> -->
+    </div>
 
     <!-- Celebration Overlay -->
     <div class="celebration-overlay" id="celebration-overlay">
@@ -908,9 +906,6 @@ You're the only one I've ever known.</p>
     </audio>
 
     <script>
-         let flippedCards = [];
-        let matchedPairs = 0;
-        let canFlip = true;
         // ============================================
         // LOVE QUOTES DATABASE
         // ============================================
@@ -989,7 +984,7 @@ You're the only one I've ever known.</p>
          const targetDate = new Date(2026, 1, 14, 0, 0, 0); // Feb 14, 2026
         
         // OPTION 2: Countdown from now (FOR TESTING - 2 minutes)
-        //const targetDate = new Date(Date.now() + 2 * 60 * 1000); // 2 minutes from now
+       // const targetDate = new Date(Date.now() + 0.1 * 60 * 1000); // 2 minutes from now
         
         let countdownInterval;
         let isRevealed = false;
@@ -1101,8 +1096,8 @@ You're the only one I've ever known.</p>
         
         // YOUR SONG URL HERE - Replace with actual URL from Dropbox, Google Drive, etc.
         const songURL = ""; // Add your song URL here
-        const songTitle = "Maruthu";
-        const songArtist = "Maruthu";
+        const songTitle = "Perfect";
+        const songArtist = "Ed Sheeran";
         
         const audioPlayer = document.getElementById('audioPlayer');
         const playPauseBtn = document.getElementById('playPauseBtn');
@@ -1186,16 +1181,16 @@ You're the only one I've ever known.</p>
         // ============================================
         // MEMORY CARD GAME
         // ============================================
-       
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let canFlip = true;
 
         function flipCard(card) {
-        console.log(card)
-        console.log(canFlip)
-            if (!canFlip || card?.classList?.contains('flipped') || card?.classList?.contains('matched')) {
+            if (!canFlip || card.classList.contains('flipped') || card.classList.contains('matched')) {
                 return;
             }
 
-            card.classList?.add('flipped');
+            card.classList.add('flipped');
             flippedCards.push(card);
 
             if (flippedCards.length === 2) {
@@ -1394,42 +1389,42 @@ You're the only one I've ever known.</p>
         // Slideshow data
         const slides = [
             {
-                img: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800",
+                img: "images/poems/1.jpg?w=800",
                 title: "Every Moment with You",
                 caption: "Is a memory I cherish forever"
             },
             {
-                img: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800",
+                img: "images/poems/2.jpg?w=800",
                 title: "Your Smile",
                 caption: "Lights up my entire world"
             },
             {
-                img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800",
+                img: "images/poems/3.jpg?w=800",
                 title: "Together Forever",
                 caption: "You and me against the world"
             },
             {
-                img: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800",
+                img: "images/poems/4.jpg?w=800",
                 title: "Our Love Story",
                 caption: "Written in the stars"
             },
             {
-                img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800",
+                img: "images/poems/5.jpg?w=800",
                 title: "You Complete Me",
                 caption: "In every possible way"
             },
             {
-                img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800",
+                img: "images/poems/6.jpg?w=800",
                 title: "My Best Friend",
                 caption: "My partner, my everything"
             },
             {
-                img: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800",
+                img: "images/poems/7.jpg?w=800",
                 title: "Every Day with You",
                 caption: "Is a blessing I'm grateful for"
             },
             {
-                img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800",
+                img: "images/poems/8.jpg?w=800",
                 title: "My Heart Belongs to You",
                 caption: "Now and forever"
             }
